@@ -35,7 +35,7 @@
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="assets/css/responsive.css">
 
-    <title> Demo (MWB) </title>
+    <title>Hotel Sai Harapriya || Best Hotel In puri</title>
 
 </head>
 
@@ -51,95 +51,46 @@
     <!-- End Preloader -->
 
     <!-- Start Navbar Area -->
-    <header class="navbar-area fixed-top">
-        <div class="overtop-mobile-nav">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="assets/img/logo.png" alt="logo">
-                </a>
-            </div>
-        </div>
-
-        <div class="overtop-nav">
-            <div class="container">
-                <nav class="navbar navbar-expand-md navbar-light">
-                    <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="logo"></a>
-
-                    <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                        <ul class="navbar-nav m-auto">
-
-
-                            <li class="nav-item"> <a href="#" class="nav-link">Home</a> </li>
-                            <li class="nav-item"> <a href="#" class="nav-link">About</a> </li>
-                            <li class="nav-item"> <a href="#" class="nav-link">Rooms</a> </li>
-                            <li class="nav-item"> <a href="#" class="nav-link">Services</a> </li>
-                            <li class="nav-item"> <a href="#" class="nav-link">Contact</a> </li>
-
-
-
-
-                        </ul>
-
-                        <div class="others-options">
-                            <ul class="navbar-nav">
-                                <li class="appoinment-btn">
-                                    <a href="#" class="appoinment-btn-one">Book Now</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </header>
+    <?php require("./config/global.php") ?>
+    <?php require("./get_file/header.php") ?>
     <!-- End Navbar Area -->
 
     <!-- Main Slider Area -->
     <div class="main-slider owl-carousel owl-theme">
-        <div class="slider-item item-bg-one">
-            <div class="d-table">
-                <div class="d-table-cell">
-                    <div class="container">
-                        <div class="banner-item">
-                            <div class="slider-content">
-                                <h1>Luxury More & <br>Meets Classic</h1>
-                                <p>Make your holiday Special</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="slider-item item-bg-two">
-            <div class="d-table">
-                <div class="d-table-cell">
-                    <div class="container">
-                        <div class="banner-item">
-                            <div class="slider-content">
-                                <h1>Luxury More & <br>Meets Classic</h1>
-                                <p>Make your holiday Special</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php
 
-        <div class="slider-item item-bg-three">
-            <div class="d-table">
-                <div class="d-table-cell">
-                    <div class="container">
-                        <div class="banner-item">
-                            <div class="slider-content">
-                                <h1>Luxury More & <br>Meets Classic</h1>
-                                <p>Make your holiday Special</p>
+        for ($i = 0; $i < count(slider::$slider_loop); $i++) {
+
+            $loop = slider::$slider_loop[$i];
+
+            $value = explode("|", $loop);
+
+            echo '
+    
+            <div class="slider-item item-bg-one" style="background-image: url(' . $value[0] . ');" >
+                <div class="d-table">
+                    <div class="d-table-cell">
+                        <div class="container">
+                            <div class="banner-item">
+                                <div class="slider-content">
+                                    <h1>' . $value[1] . '</h1>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            
+            
+            ';
+        }
+
+        ?>
+
+
+
+
     </div>
     <!-- End Banner Area -->
 
@@ -174,12 +125,12 @@
                             <p>Adult</p>
                             <div class="form-group">
                                 <select name="adult" class="form-content">
-                                        <option value="1">01</option>
-                                        <option value="2">02</option>
-                                        <option value="3">03</option>
-                                        <option value="4">04</option>
-                                        <option value="5">05</option>
-                                    </select>
+                                    <option value="1">01</option>
+                                    <option value="2">02</option>
+                                    <option value="3">03</option>
+                                    <option value="4">04</option>
+                                    <option value="5">05</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -188,8 +139,8 @@
                         <div class="btn-content">
                             <div class="check-btn">
                                 <button class="default-btn-one">
-                                        Check Availability
-                                    </button>
+                                    Check Availability
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -199,6 +150,9 @@
     </div>
     <!-- End Check Section -->
 
+
+
+
     <!-- Start Memory Section -->
     <section class="memory-section">
         <div class="container">
@@ -207,13 +161,12 @@
                     <div class="memory-item">
                         <div class="memory-content">
                             <span>About Us</span>
-                            <h2>Make Your Golden Memory With Us!</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
-                            </p>
+                            <h2><?php echo about::$title ?></h2>
+                            <p> <?php echo about::$deception ?> </p>
                         </div>
 
                         <div class="memory-btn">
-                            <a href="#" class="memory-btn-one">Read More <i class="fa fa-arrow-right"></i></a>
+                            <a href="<?php echo button_link::$about ?>" class="memory-btn-one">Read More <i class="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
 
@@ -224,7 +177,7 @@
 
                 <div class="col-lg-7">
                     <div class="memory-image">
-                        <img src="assets/img/young-women.jpg" alt="image">
+                        <img src="<?php echo about::$img ?>" alt="image">
                     </div>
                 </div>
             </div>
@@ -233,36 +186,58 @@
     <!-- End Memory Section -->
 
     <!-- Start Room Area -->
-    <section class="room-area">
+    <section class="room-page-section">
         <div class="container">
             <div class="section-title">
-                <span>Accommodation</span>
+                <span>Tariff</span>
                 <h3>Discover Our Room</h3>
             </div>
 
-            <div class="room-slider owl-carousel owl-theme">
+            <div class="row">
 
 
-                <div class="room-item">
-                    <div class="room-image">
-                        <img src="assets/img/room/1.jpg" alt="image">
 
-                        <div class="night-btn">
-                            <a href="#" class="default-btn-one">₹ 260/Night</a>
+                <?php
+
+                for ($i = 0; $i < count(room::$room); $i++) {
+
+                    $loop = room::$room[$i];
+
+                    $value = explode("|", $loop);
+
+                    echo '
+    
+                    <div class="col-lg-6 col-md-6">
+                        <div class="room-item">
+                            <div class="room-image">
+                                <img style="width:100%;" src="' . $value[0] . '" alt="image">
+
+                                <div class="night-btn">
+                                    <a href="' . button_link::$book . '" class="default-btn-one">BOOK NOW</a>
+                                </div>
+                            </div>
+
+                            <div class="room-content">
+                                <h3>' . $value[1] . '</h3>
+                                <p>' . $value[2] . '</p>
+                                <p>' . $value[3] . '</p>
+                                <p>' . $value[4] . '</p>
+                            
+                            </div>
                         </div>
                     </div>
+                        
+                        
+                    ';
+                }
 
-                    <div class="room-content">
-                        <h3>Suite Room</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodt.</p>
+                ?>
 
-                        <div class="room-btn">
-                            <a href="#" class="room-btn-one">Book Now
-                                    <i class="fa fa-arrow-right"></i>
-                                </a>
-                        </div>
-                    </div>
-                </div>
+
+
+
+
+
 
 
 
@@ -284,6 +259,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Start Services Section -->
     <section class="services-section">
         <div class="container">
@@ -293,77 +285,166 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="services-item">
-                        <div class="services-image">
-                            <img src="assets/img/services/1.png" alt="image">
-                        </div>
-                        <h2>Private Pool</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod temporgravida. </p>
-                        <a href="#" class="services-btn-one">Read More</a>
-                    </div>
-                </div>
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="services-item">
-                        <div class="services-image">
-                            <img src="assets/img/services/2.png" alt="image">
-                        </div>
-                        <h2>Free & Unlimited Wifi</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod temporgravida. </p>
-                        <a href="#" class="services-btn-one">Read More</a>
-                    </div>
-                </div>
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="services-item">
-                        <div class="services-image">
-                            <img src="assets/img/services/3.png" alt="image">
-                        </div>
-                        <h2>Airport Pick Up</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod temporgravida. </p>
-                        <a href="#" class="services-btn-one">Read More</a>
-                    </div>
-                </div>
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="services-item">
-                        <div class="services-image">
-                            <img src="assets/img/services/4.png" alt="image">
-                        </div>
-                        <h2>Gym Access</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod temporgravida. </p>
-                        <a href="#" class="services-btn-one">Read More</a>
-                    </div>
-                </div>
+                <?php
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="services-item">
-                        <div class="services-image">
-                            <img src="assets/img/services/5.png" alt="image">
-                        </div>
-                        <h2>Bar Access</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod temporgravida. </p>
-                        <a href="#" class="services-btn-one">Read More</a>
-                    </div>
-                </div>
+                for ($i = 0; $i < count(facility::$facility); $i++) {
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="services-item">
-                        <div class="services-image">
-                            <img src="assets/img/services/6.png" alt="image">
+                    $loop = facility::$facility[$i];
+
+                    $value = explode("|", $loop);
+
+                    echo '
+    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="services-item">
+                            <div class="services-image">
+                                <img style="width: 80px;" src="' . $value[0] . '" alt="image">
+                            </div>
+                            <h2>' . $value[1] . '</h2>
                         </div>
-                        <h2>24/7H Concierge</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod temporgravida. </p>
-                        <a href="#" class="services-btn-one">Read More</a>
                     </div>
-                </div>
+                        
+                        
+                    ';
+                }
+
+                ?>
+
+
+
+
+
+
+
+
             </div>
         </div>
     </section>
     <!-- End Services Section -->
 
-    <!-- Start Tabs Section -->
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+    <div class="section-title">
+        <span>Travel</span>
+        <h3>Why Puri ?</h3>
+    </div>
+
+
+    <br>
+    <br>
+
+
+
+    <section class="convention-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="reception-item">
+                        <div class="reception-content">
+                            <h2>the spiritual wonder</h2>
+                            <h3>Jagannath Temple</h3>
+                            <p>The Jagannath Temple is an important Hindu temple dedicated to Jagannath, a form of Vishnu - one of the trinity of supreme divinity in Hinduism. Puri is in the state of Odisha, on the eastern coast of India. The present temple was rebuilt from the tenth century onwards, on the site of pre existing temples in the compound but not the main Jagannatha temple, and begun by Anantavarman Chodaganga, the first king of the Eastern Ganga dynasty.[1]</p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="reception-image">
+                        <img src="./img/puri/1.jpg" alt="image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <section class="convention-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="convention-image">
+                        <img src="./img/puri/2.jpg" alt="image">
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="convention-item">
+                        <div class="convention-content">
+                            <h2>sky above, sand below, peace within..</h2>
+                            <h3>Puri Beach</h3>
+                            <p>The pilgrim town is famous for its golden beaches which forms its eastern boundary. Considered one of the safest beaches in the country, one can find tourists taking to sea and enjoying a leisurely bath. The beach congregation of people throughout the day except may be in the afternoon.Puri is one of the few destinations which offers spiritual salvation along with the thrill of nature. The Beach offers tourists the solitude and serenity to soak in the mystical charm of the city. Lined across the beach of Puri are some of the most important relics of history, like the Baulimatha – where Guru Nanak stayed during his visit to Puri. </p>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section class="convention-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="reception-item">
+                        <div class="reception-content">
+                            <h2>the architectural wonder</h2>
+                            <h3>Konark Sun Temple</h3>
+                            <p>Konark Sun Temple is a 13th-century CE (year 1250) Sun temple at Konark about 35 kilometres (22 mi) northeast from Puri city on the coastline in Puri district, Odisha, India.[1][2] The temple is attributed to king Narasimhadeva I of the Eastern Ganga dynasty about 1250 CE</p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="reception-image">
+                        <img src="./img/puri/3.jpg" alt="image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
 
 
     <!-- Start Gallery Section -->
@@ -403,32 +484,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-12">
-                        <div class="gallery-item">
-                            <div class="gallery-image">
-                                <img src="assets/img/gallery/1.jpg" alt="image">
-                                <a href="#" class="popup-btn">Restaurent</a>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-lg-12">
-                        <div class="gallery-item">
-                            <div class="gallery-image">
-                                <img src="assets/img/gallery/2.jpg" alt="image">
-                                <a href="#" class="popup-btn">Therapy</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12">
-                        <div class="gallery-item">
-                            <div class="gallery-image">
-                                <img src="assets/img/gallery/3.jpg" alt="image">
-                                <a href="#" class="popup-btn">Gym</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -436,103 +492,7 @@
     <!-- End Gallery Section -->
 
     <!-- Start Footer Section -->
-    <footer class="footer-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-md-6 col-sm-6">
-                    <div class="fooetr-item">
-                        <div class="footer-logo">
-                            <img src="assets/img/logo.png" alt="image">
-                        </div>
-
-                        <div class="footer-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum incididunt ut labore et suspendisse ultrices gravida. Risus incididunt ut labore et commodo
-                                viverra maecenas</p>
-                        </div>
-
-                        <ul>
-                            <li>
-                                <a href="#" target="_blank">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer-content">
-                        <h2>About Overtop</h2>
-                    </div>
-
-                    <ul class="footer-info">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i> Address ::
-                        </li>
-                        <li>
-                            <i class="fa fa-phone"></i> +91 000000000
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i> demo@gmail.com
-                        </li>
-
-                    </ul>
-                </div>
-
-
-
-                <div class="col-lg-2 col-md-6 col-sm-6">
-                    <div class="footer-content">
-                        <h2>Inquiries</h2>
-                    </div>
-
-                    <ul class="footer-list">
-                        <li class="nav-item"> <a href="#" class="nav-link">Home</a> </li>
-                        <li class="nav-item"> <a href="#" class="nav-link">About</a> </li>
-                        <li class="nav-item"> <a href="#" class="nav-link">Rooms</a> </li>
-                        <li class="nav-item"> <a href="#" class="nav-link">Services</a> </li>
-                        <li class="nav-item"> <a href="#" class="nav-link">Contact</a> </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-7">
-                        <div class="footer-bottom-content">
-                            <p>Copyright <i class="far fa-copyright"></i> 2022 Overtop. All Rights Reserved by MWB</a>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 col-sm-5">
-                        <div class="footer-bottom-links">
-                            <p>
-                                <a href="#">Terms & Privacy Policy</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php require("./get_file/footer.php") ?>
     <!-- End Footer Section -->
 
     <!-- Back Top top -->
