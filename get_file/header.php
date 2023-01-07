@@ -1,7 +1,7 @@
 <header class="navbar-area fixed-top">
     <div class="overtop-mobile-nav">
         <div class="logo">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="assets/img/logo.png" alt="logo">
             </a>
         </div>

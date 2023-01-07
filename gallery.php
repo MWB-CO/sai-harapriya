@@ -61,7 +61,7 @@
         <div class="container">
             <div class="page-banner-content">
                 <h2>Gallery</h2>
-                <p><a href="index.html">Home</a> / gallery</p>
+                <p><a href="index.php">Home</a> / gallery</p>
             </div>
         </div>
     </section>

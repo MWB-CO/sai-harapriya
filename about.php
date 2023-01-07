@@ -61,7 +61,7 @@
         <div class="container">
             <div class="page-banner-content">
                 <h2>About Us</h2>
-                <p><a href="index.html">Home</a> / About Us</p>
+                <p><a href="index.php">Home</a> / About Us</p>
             </div>
         </div>
     </section>
