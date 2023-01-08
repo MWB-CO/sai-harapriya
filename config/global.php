@@ -7,17 +7,17 @@ class button_link
     public static $home = "./index.php";
     public static $about = "./about.php";
     public static $rooms = "./room.php";
-    public static $why_puri = "./why-puri.php";
+    public static $why_puri = "./side-view.php";
     public static $service = "./services.php";
     public static $contact = "./contact.php";
     public static $gallery = "./gallery.php";
-    public static $book = "#";
+    public static $book = "./book.php";
 
 
 
-    public static $ts = "#";
+    // public static $ts = "#";
     public static $privacy = "#";
-    public static $cancellation = "#";
+    // public static $cancellation = "#";
 }
 
 
@@ -26,6 +26,10 @@ class contact{
     public static $number ="+91 9777090772";
     public static $email ="hotelsaiharapriya@gmail.com";
     public static $address ="Swargadwar, Goudabad Sahi, Puri, Odisha 752001";
+
+
+    public static $facebook ="https://www.facebook.com/profile.php?id=100088639062351";
+    public static $instagram ="https://www.instagram.com/sai_harapriya/";
 
 
 
@@ -40,12 +44,12 @@ class slider{
 
         "./img/slider/slider1.jpg
         |
-        Luxury More & <br>Meets Classic
+        WelCome To <br> Sai Harapriya
         "
         
         ,"./img/slider/slider2.jpg
         |
-        Luxury More & <br>Meets Classic
+        Best Hotel In Puri
         "
 
 

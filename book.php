@@ -38,6 +38,20 @@
     <title>hotel sai harapriya puri || Best Hotel In puri</title>
 
     <link rel="icon" type="image/png" href="assets/img/favicon.jpg">
+
+    <style>
+        .nice-select {
+            width: 100%;
+            margin: 0px;
+            height: 56px;
+            border: none;
+            background: #f2eeee;
+            border-radius: 0px;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -60,8 +74,8 @@
     <section class="page-banner" style="background-image: url(./img/1.jpg);">
         <div class="container">
             <div class="page-banner-content">
-                <h2>Contact</h2>
-                <p><a href="index.php">Home</a> / Contact</p>
+                <h2>Booking Form</h2>
+                <p><a href="index.php">Home</a> / Book</p>
             </div>
         </div>
     </section>
@@ -77,7 +91,7 @@
                             <i class="flaticon-placeholder"></i>
                         </div>
                         <h4>Address</h4>
-                        <p><a href="#"> <?php echo contact::$address ?></a></p>
+                        <p><a href="#"><?php echo contact::$address ?></a></p>
                     </div>
                 </div>
 
@@ -99,7 +113,7 @@
                         <h4>Email</h4>
 
                         <p><a href="mailto:<?php echo contact::$email ?>"><?php echo contact::$email ?></a></p>
-                        
+
                     </div>
                 </div>
             </div>
@@ -110,59 +124,115 @@
     <div class="contact-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="map-area">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3754.0694152641668!2d85.81307819999999!3d19.794653999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19c5714b487ef7%3A0x27b7ca13d404d9f7!2sSai%20Harapriya!5e0!3m2!1sen!2sin!4v1673107402266!5m2!1sen!2sin" ></iframe>
 
-                            
-                    </div>
-                </div>
 
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <div class="contact-area">
                         <div class="contactForm">
-                            <form id="contactForm" novalidate="true">
+                            <form id="contactForm" novalidate="true" action="#" >
                                 <div class="row">
+
                                     <div class="col-lg-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label for="">Check in</label>
+                                            <input type="date" name="name" id="name" class="form-control" required="" data-error="Please enter Check in date" placeholder="Your Name">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label for="">Check Out</label>
+                                            <input type="date" name="name" id="name" class="form-control" required="" data-error="Please enter Check Out date" placeholder="Your Name">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="form-group">
+
+                                            <input type="text" name="name" id="name" class="form-control" required="" data-error="Please enter How Many Adult" placeholder="Adult">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="form-group">
+                                            <input type="email" name="email" id="email" class="form-control" required="" data-error="Please enter How Many Child" placeholder="Child">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="form-group">
+
+                                            <select name="" id="">
+
+                                                <option value="" selected disabled>Select Room</option>
+
+                                                <?php
+
+                                                for ($i = 0; $i < count(room::$room); $i++) {
+
+                                                    $loop = room::$room[$i];
+
+                                                    $value = explode("|", $loop);
+
+                                                    echo '
+    
+                                                    <option value="'.$value[1].'">'.$value[1].'</option>
+                                                        
+                                                        
+                                                    ';
+                                                }
+
+                                                ?>
+
+
+                                            </select>
+
+                                            <!-- <input type="email" name="email" id="email" class="form-control" required="" data-error="Please enter your email" placeholder="Your Email"> -->
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-lg-4 col-sm-6">
                                         <div class="form-group">
                                             <input type="text" name="name" id="name" class="form-control" required="" data-error="Please enter your name" placeholder="Your Name">
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-6 col-sm-6">
+                                    <div class="col-lg-4 col-sm-6">
                                         <div class="form-group">
                                             <input type="email" name="email" id="email" class="form-control" required="" data-error="Please enter your email" placeholder="Your Email">
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-6 col-sm-6">
+                                   
+                                    <div class="col-lg-4 col-sm-6">
                                         <div class="form-group">
-                                            <input type="text" name="phone_number" id="phone_number" required="" data-error="Please enter your number" class="form-control" placeholder="Your Phone">
+                                            <input type="text" name="phone" id="msg_subject" class="form-control" required="" data-error="Please enter your number" placeholder="Your MOB Number">
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-6 col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" name="msg_subject" id="msg_subject" class="form-control" required="" data-error="Please enter your subject" placeholder="Your Subject">
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12 col-md-12">
+                                    <!-- <div class="col-lg-12 col-md-12">
                                         <div class="form-group">
                                             <textarea name="message" class="form-control" id="message" cols="30" rows="5" required="" data-error="Write your message" placeholder="Your Message"></textarea>
                                             <div class="help-block with-errors"></div>
                                         </div>
-                                    </div>
+                                    </div> -->
 
                                     <div class="col-lg-12 col-md-12">
                                         <div class="send-btn">
-                                            
-                                            <button type="submit" class="send-btn-one disabled" style="pointer-events: all; cursor: pointer;">
-                                                Send Message
+
+                                            <button type="submit" class=" col-lg-12  col-md-12 send-btn-one disabled" style="pointer-events: all; cursor: pointer;">
+                                                BOOK NOW
                                             </button>
                                         </div>
                                         <div id="msgSubmit" class="h3 text-center hidden"></div>

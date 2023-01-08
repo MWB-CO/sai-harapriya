@@ -13,7 +13,7 @@
 
                     <ul>
                         <li>
-                            <a href="#" target="_blank">
+                            <a href="<?php echo contact::$facebook ?>" target="_blank">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
                         </li>
@@ -28,7 +28,7 @@
                             </a>
                         </li> -->
                         <li>
-                            <a href="#" target="_blank">
+                            <a href="<?php echo contact::$instagram ?>" target="_blank">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </li>
@@ -66,7 +66,7 @@
                     <li class="nav-item"  > <a style="padding:0px;" href="<?php echo button_link::$home ?>" class="nav-link">Home</a> </li>
                     <li class="nav-item"  > <a style="padding:0px;" href="<?php echo button_link::$about ?>" class="nav-link">About</a> </li>
                     <li class="nav-item"  > <a style="padding:0px;" href="<?php echo button_link::$rooms ?>" class="nav-link">Rooms</a> </li>
-                    <li class="nav-item"  > <a style="padding:0px;" href="<?php echo button_link::$why_puri ?>" class="nav-link">Why Puri?</a> </li>
+                    <li class="nav-item"  > <a style="padding:0px;" href="<?php echo button_link::$why_puri ?>" class="nav-link">Side View</a> </li>
                     <li class="nav-item"  > <a style="padding:0px;" href="<?php echo button_link::$service ?>" class="nav-link">Services</a> </li>
                     <li class="nav-item"  > <a style="padding:0px;" href="<?php echo button_link::$gallery ?>" class="nav-link">Gallery</a> </li>
                     <li class="nav-item"  > <a style="padding:0px;" href="<?php echo button_link::$contact ?>" class="nav-link">Contact</a> </li>
@@ -88,7 +88,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-5">
                     <div class="footer-bottom-links">
                         <p>
-                            <a href="#">Terms & Privacy Policy</a>
+                            <a href="<?php echo button_link::$privacy ?>">Terms & Privacy Policy</a>
                         </p>
                     </div>
                 </div>

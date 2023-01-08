@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zxx">
 
-<!-- Mirrored from templates.envytheme.com/overtop/default/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Dec 2022 08:53:01 GMT -->
+<!-- Mirrored from templates.envytheme.com/overtop/default/room.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Dec 2022 08:53:06 GMT -->
 
 <head>
     <!-- REQUIRED META TAGS -->
@@ -35,8 +35,9 @@
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="assets/css/responsive.css">
 
-    <title>Hotel Sai Harapriya || Best Hotel In puri</title>
+    <title>hotel sai harapriya puri || Best Hotel In puri</title>
 
+    <link rel="icon" type="image/png" href="assets/img/favicon.jpg">
 </head>
 
 <body>
@@ -55,292 +56,32 @@
     <?php require("./get_file/header.php") ?>
     <!-- End Navbar Area -->
 
-    <!-- Main Slider Area -->
-    <div class="main-slider owl-carousel owl-theme">
-
-        <?php
-
-        for ($i = 0; $i < count(slider::$slider_loop); $i++) {
-
-            $loop = slider::$slider_loop[$i];
-
-            $value = explode("|", $loop);
-
-            echo '
-    
-            <div class="slider-item item-bg-one" style="background-image: url(' . $value[0] . ');" >
-                <div class="d-table">
-                    <div class="d-table-cell">
-                        <div class="container">
-                            <div class="banner-item">
-                                <div class="slider-content">
-                                    <h1>' . $value[1] . '</h1>
-                                    <p>' . contact::$number . '</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            ';
-        }
-
-        ?>
-
-
-
-
-    </div>
-    <!-- End Banner Area -->
-
-    <!-- Start Check Section -->
-    <div class="check-section">
+    <!-- Page banner -->
+    <section class="page-banner" style="background-image: url(./img/1.jpg);">
         <div class="container">
-            <form class="check-form">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6 no-padding">
-                        <div class="check-content">
-                            <p>Check-In</p>
-
-                            <div class="form-group">
-                                <input type="text" name="check-in" id="datepicker" class="form-control" placeholder="Date">
-                                <i class="flaticon-calendar"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6 no-padding">
-                        <div class="check-content">
-                            <p>Check-Out</p>
-                            <div class="form-group">
-                                <input type="text" name="check-out" id="check-datepicker" class="form-control" placeholder="Date">
-                                <i class="flaticon-calendar"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6 no-padding">
-                        <div class="check-content">
-                            <p>Adult</p>
-                            <div class="form-group">
-                                <select name="adult" class="form-content">
-                                    <option value="1">01</option>
-                                    <option value="2">02</option>
-                                    <option value="3">03</option>
-                                    <option value="4">04</option>
-                                    <option value="5">05</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6 no-padding">
-                        <div class="btn-content">
-                            <div class="check-btn">
-                                <button class="default-btn-one">
-                                    Check Availability
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-    <!-- End Check Section -->
-
-
-
-
-    <!-- Start Memory Section -->
-    <section class="memory-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5">
-                    <div class="memory-item">
-                        <div class="memory-content">
-                            <span>About Us</span>
-                            <h2><?php echo about::$title ?></h2>
-                            <p> <?php echo about::$deception ?> </p>
-                        </div>
-
-                        <div class="memory-btn">
-                            <a href="<?php echo button_link::$about ?>" class="memory-btn-one">Read More <i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="dot-image">
-                        <img src="assets/img/dot-shape.png" alt="image">
-                    </div>
-                </div>
-
-                <div class="col-lg-7">
-                    <div class="memory-image">
-                        <img src="<?php echo about::$img ?>" alt="image">
-                    </div>
-                </div>
+            <div class="page-banner-content">
+                <h2>Side View</h2>
+                <p><a href="index.php">Home</a> / side view</p>
             </div>
         </div>
     </section>
-    <!-- End Memory Section -->
+    <!-- End Page banner -->
 
-    <!-- Start Room Area -->
-    <section class="room-page-section">
-        <div class="container">
-            <div class="section-title">
-                <span>Tariff</span>
-                <h3>Discover Our Room</h3>
-            </div>
+    <!-- Start Room Page Section -->
 
-            <div class="row">
 
-
-
-                <?php
-
-                for ($i = 0; $i < count(room::$room); $i++) {
-
-                    $loop = room::$room[$i];
-
-                    $value = explode("|", $loop);
-
-                    echo '
-    
-                    <div class="col-lg-6 col-md-6">
-                        <div class="room-item">
-                            <div class="room-image">
-                                <img style="width:100%;" src="' . $value[0] . '" alt="image">
-
-                                <div class="night-btn">
-                                    <a href="' . button_link::$book . '" class="default-btn-one">BOOK NOW</a>
-                                </div>
-                            </div>
-
-                            <div class="room-content">
-                                <h3>' . $value[1] . '</h3>
-                                <p>' . $value[2] . '</p>
-                                <p>' . $value[3] . '</p>
-                                <p>' . $value[4] . '</p>
-                            
-                            </div>
-                        </div>
-                    </div>
-                        
-                        
-                    ';
-                }
-
-                ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-
-            <br>
-            <br>
-            <br>
-
-
-        </div>
-    </section>
-    <!-- End Room Area -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Start Services Section -->
-    <section class="services-section">
-        <div class="container">
-            <div class="section-title">
-                <span>List of service</span>
-                <h3>During Your Stay</h3>
-            </div>
-
-            <div class="row">
-
-
-
-                <?php
-
-                for ($i = 0; $i < count(facility::$facility); $i++) {
-
-                    $loop = facility::$facility[$i];
-
-                    $value = explode("|", $loop);
-
-                    echo '
-    
-                    <div class="col-lg-4 col-md-6">
-                        <div class="services-item">
-                            <div class="services-image">
-                                <img style="width: 80px;" src="' . $value[0] . '" alt="image">
-                            </div>
-                            <h2>' . $value[1] . '</h2>
-                        </div>
-                    </div>
-                        
-                        
-                    ';
-                }
-
-                ?>
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </section>
-    <!-- End Services Section -->
-
-
-
-
-
-
-
+    <br>
+    <br>
+    <br>
 
 
 
     <section class="room-page-section">
         <div class="container">
-            <div class="section-title">
+            <!-- <div class="section-title">
                 <span>TRAVEL</span>
                 <h3>Side View</h3>
-            </div>
+            </div> -->
 
             <div class="row">
 
@@ -607,56 +348,7 @@
 
 
 
-
-
-
-
-
-
-
-    <!-- Start Gallery Section -->
-    <section class="gallery-section">
-        <div class="container">
-            <div class="section-title">
-                <span>Project</span>
-                <h3>Our Gallery</h3>
-            </div>
-
-            <div class="row">
-                <div class="gallery-slider owl-carousel owl-theme">
-                    <div class="col-lg-12">
-                        <div class="gallery-item">
-                            <div class="gallery-image">
-                                <img src="assets/img/gallery/1.jpg" alt="image">
-                                <a href="#" class="popup-btn">Our Hotel</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12">
-                        <div class="gallery-item">
-                            <div class="gallery-image">
-                                <img src="assets/img/gallery/2.jpg" alt="image">
-                                <a href="#" class="popup-btn">Top View</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12">
-                        <div class="gallery-item">
-                            <div class="gallery-image">
-                                <img src="assets/img/gallery/3.jpg" alt="image">
-                                <a href="#" class="popup-btn">Room View</a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Gallery Section -->
+    <!-- End  Room Page Section -->
 
     <!-- Start Footer Section -->
     <?php require("./get_file/footer.php") ?>
@@ -665,6 +357,7 @@
     <!-- Back Top top -->
     <div class="back-to-top">Top</div>
     <!-- End Back Top top -->
+
 
     <!-- jQuery Min JS -->
     <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
@@ -701,6 +394,6 @@
     <script src="assets/js/active.js"></script>
 </body>
 
-<!-- Mirrored from templates.envytheme.com/overtop/default/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Dec 2022 08:53:06 GMT -->
+<!-- Mirrored from templates.envytheme.com/overtop/default/room.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Dec 2022 08:53:07 GMT -->
 
 </html>

@@ -61,7 +61,7 @@
         <div class="container">
             <div class="page-banner-content">
                 <h2>Room</h2>
-                <p><a href="index.php</a> / Room</p>
+                <p><a href="index.php">Home</a>  / Room</p>
             </div>
         </div>
     </section>
